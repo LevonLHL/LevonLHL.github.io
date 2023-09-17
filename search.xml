@@ -386,4 +386,33 @@
         <tag>数据结构</tag>
       </tags>
   </entry>
+  <entry>
+    <title>两数之和</title>
+    <url>/2023/09/17/%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/</url>
+    <content><![CDATA[<p>给定一个整数数组 <code>nums</code> 和一个整数目标值 <code>target</code>，请你在该数组中找出 <strong>和为目标值</strong> <em><code>target</code></em> 的那 <strong>两个</strong> 整数，并返回它们的数组下标。</p>
+<p>你可以假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。</p>
+<p>你可以按任意顺序返回答案。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：nums = [2,7,11,15], target = 9</span><br><span class="line">输出：[0,1]</span><br><span class="line">解释：因为 nums[0] + nums[1] == 9 ，返回 [0, 1] 。</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：nums = [3,2,4], target = 6</span><br><span class="line">输出：[1,2]</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 3：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：nums = [3,3], target = 6</span><br><span class="line">输出：[0,1]</span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Note: The returned array must be malloced, assume caller calls free().</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="type">int</span>* <span class="title function_">twoSum</span><span class="params">(<span class="type">int</span>* nums, <span class="type">int</span> numsSize, <span class="type">int</span> target, <span class="type">int</span>* returnSize)</span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; numsSize; ++i) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = i + <span class="number">1</span>; j &lt; numsSize; ++j) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[i] + nums[j] == target) &#123;</span><br><span class="line">                <span class="type">int</span>* ret = <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="type">int</span>) * <span class="number">2</span>);</span><br><span class="line">                ret[<span class="number">0</span>] = i, ret[<span class="number">1</span>] = j;</span><br><span class="line">                *returnSize = <span class="number">2</span>;</span><br><span class="line">                <span class="keyword">return</span> ret;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    *returnSize = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>力扣算法题</category>
+      </categories>
+      <tags>
+        <tag>C语言</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
 </search>
