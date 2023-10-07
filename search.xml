@@ -1259,4 +1259,53 @@
         <tag>算法</tag>
       </tags>
   </entry>
+  <entry>
+    <title>丑数</title>
+    <url>/2023/10/07/%E4%B8%91%E6%95%B0/</url>
+    <content><![CDATA[<p><strong>丑数</strong> 就是只包含质因数 <code>2</code>、<code>3</code> 和 <code>5</code> 的正整数。</p>
+<p>给你一个整数 <code>n</code> ，请你判断 <code>n</code> 是否为 <strong>丑数</strong> 。如果是，返回 <code>true</code> ；否则，返回 <code>false</code> 。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：n = 6</span><br><span class="line">输出：true</span><br><span class="line">解释：6 = 2 × 3</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：n = 1</span><br><span class="line">输出：true</span><br><span class="line">解释：1 没有质因数，因此它的全部质因数是 &#123;2, 3, 5&#125; 的空集。习惯上将其视作第一个丑数。</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 3：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：n = 14</span><br><span class="line">输出：false</span><br><span class="line">解释：14 不是丑数，因为它包含了另外一个质因数 7 。</span><br></pre></td></tr></table></figure>
+
+<hr>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">bool</span> <span class="title function_">isUgly</span><span class="params">(<span class="type">int</span> n)</span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(n)&#123;</span><br><span class="line">        <span class="keyword">if</span>(n%<span class="number">2</span>==<span class="number">0</span>)  n/=<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(n%<span class="number">3</span>==<span class="number">0</span>) n/=<span class="number">3</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(n%<span class="number">5</span>==<span class="number">0</span>) n/=<span class="number">5</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> n==<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>力扣算法题</category>
+      </categories>
+      <tags>
+        <tag>C语言</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>多数元素</title>
+    <url>/2023/10/07/%E5%A4%9A%E6%95%B0%E5%85%83%E7%B4%A0/</url>
+    <content><![CDATA[<p>给定一个大小为 <code>n</code> 的数组 <code>nums</code> ，返回其中的多数元素。多数元素是指在数组中出现次数 <strong>大于</strong> <code>⌊ n/2 ⌋</code> 的元素。</p>
+<p>你可以假设数组是非空的，并且给定的数组总是存在多数元素。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：nums = [3,2,3]</span><br><span class="line">输出：3</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：nums = [2,2,1,1,1,2,2]</span><br><span class="line">输出：2</span><br></pre></td></tr></table></figure>
+
+<hr>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">majorityElement</span><span class="params">(<span class="type">int</span>* nums, <span class="type">int</span> numsSize)</span>&#123;</span><br><span class="line">    <span class="type">int</span> i,j,num=nums[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>,j=<span class="number">0</span>;i&lt;numsSize;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(num == nums[i])   j++;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            j&gt;<span class="number">0</span>?(j--):(num=nums[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> num;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>力扣算法题</category>
+      </categories>
+      <tags>
+        <tag>C语言</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
 </search>
