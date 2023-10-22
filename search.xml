@@ -1377,4 +1377,60 @@
         <tag>算法</tag>
       </tags>
   </entry>
+  <entry>
+    <title>翻转图像</title>
+    <url>/2023/10/10/%E7%BF%BB%E8%BD%AC%E5%9B%BE%E5%83%8F/</url>
+    <content><![CDATA[<p>给定一个 <code>n x n</code> 的二进制矩阵 <code>image</code> ，先 <strong>水平</strong> 翻转图像，然后 <strong>反转</strong> 图像并返回 <em>结果</em> 。</p>
+<p><strong>水平</strong>翻转图片就是将图片的每一行都进行翻转，即逆序。</p>
+<ul>
+<li>例如，水平翻转 <code>[1,1,0]</code> 的结果是 <code>[0,1,1]</code>。</li>
+</ul>
+<p><strong>反转</strong>图片的意思是图片中的 <code>0</code> 全部被 <code>1</code> 替换， <code>1</code> 全部被 <code>0</code> 替换。</p>
+<ul>
+<li>例如，反转 <code>[0,1,1]</code> 的结果是 <code>[1,0,0]</code>。</li>
+</ul>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：image = [[1,1,0],[1,0,1],[0,0,0]]</span><br><span class="line">输出：[[1,0,0],[0,1,0],[1,1,1]]</span><br><span class="line">解释：首先翻转每一行: [[0,1,1],[1,0,1],[0,0,0]]；</span><br><span class="line">     然后反转图片: [[1,0,0],[0,1,0],[1,1,1]]</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：image = [[1,1,0,0],[1,0,0,1],[0,1,1,1],[1,0,1,0]]</span><br><span class="line">输出：[[1,1,0,0],[0,1,1,0],[0,0,0,1],[1,0,1,0]]</span><br><span class="line">解释：首先翻转每一行: [[0,0,1,1],[1,0,0,1],[1,1,1,0],[0,1,0,1]]；</span><br><span class="line">     然后反转图片: [[1,1,0,0],[0,1,1,0],[0,0,0,1],[1,0,1,0]]</span><br></pre></td></tr></table></figure>
+
+<hr>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Return an array of arrays of size *returnSize.</span></span><br><span class="line"><span class="comment"> * The sizes of the arrays are returned as *returnColumnSizes array.</span></span><br><span class="line"><span class="comment"> * Note: Both returned array and *columnSizes array must be malloced, assume caller calls free().</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="type">int</span>** <span class="title function_">flipAndInvertImage</span><span class="params">(<span class="type">int</span>** image, <span class="type">int</span> imageSize, <span class="type">int</span>* imageColSize, <span class="type">int</span>* returnSize, <span class="type">int</span>** returnColumnSizes)</span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;imageSize;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;imageColSize[i]/<span class="number">2</span>;j++)&#123;</span><br><span class="line">            image[i][j]=image[i][j]^image[i][imageSize<span class="number">-1</span>-j];</span><br><span class="line">            image[i][imageSize<span class="number">-1</span>-j]=image[i][j]^image[i][imageSize<span class="number">-1</span>-j];</span><br><span class="line">            image[i][j]=image[i][j]^image[i][imageSize<span class="number">-1</span>-j];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;imageColSize[i];j++)&#123;</span><br><span class="line">            image[i][j] ^= <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    *returnSize=imageSize;</span><br><span class="line">    *returnColumnSizes=imageColSize;</span><br><span class="line">    <span class="keyword">return</span> image;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>力扣算法题</category>
+      </categories>
+      <tags>
+        <tag>C语言</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>只出现一次的数字</title>
+    <url>/2023/10/22/%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E6%95%B0%E5%AD%97/</url>
+    <content><![CDATA[<p>给你一个 <strong>非空</strong> 整数数组 <code>nums</code> ，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。</p>
+<p>你必须设计并实现线性时间复杂度的算法来解决此问题，且该算法只使用常量额外空间。</p>
+<p><strong>示例 1 ：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：nums = [2,2,1]</span><br><span class="line">输出：1</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2 ：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：nums = [4,1,2,1,2]</span><br><span class="line">输出：4</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 3 ：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：nums = [1]</span><br><span class="line">输出：1</span><br></pre></td></tr></table></figure>
+
+<hr>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">singleNumber</span><span class="params">(<span class="type">int</span>* nums, <span class="type">int</span> numsSize)</span>&#123;</span><br><span class="line">    <span class="type">int</span> res=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;numsSize;i++)&#123;</span><br><span class="line">        res ^= nums[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>力扣算法题</category>
+      </categories>
+      <tags>
+        <tag>C语言</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
 </search>
