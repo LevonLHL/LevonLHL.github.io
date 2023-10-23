@@ -1433,4 +1433,33 @@
         <tag>算法</tag>
       </tags>
   </entry>
+  <entry>
+    <title>老人的数目</title>
+    <url>/2023/10/23/%E8%80%81%E4%BA%BA%E7%9A%84%E6%95%B0%E7%9B%AE/</url>
+    <content><![CDATA[<p>给你一个下标从 <strong>0</strong> 开始的字符串 <code>details</code> 。<code>details</code> 中每个元素都是一位乘客的信息，信息用长度为 <code>15</code> 的字符串表示，表示方式如下：</p>
+<ul>
+<li>前十个字符是乘客的手机号码。</li>
+<li>接下来的一个字符是乘客的性别。</li>
+<li>接下来两个字符是乘客的年龄。</li>
+<li>最后两个字符是乘客的座位号。</li>
+</ul>
+<p>请你返回乘客中年龄 <strong>严格大于 60 岁</strong> 的人数。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：details = [&quot;7868190130M7522&quot;,&quot;5303914400F9211&quot;,&quot;9273338290F4010&quot;]</span><br><span class="line">输出：2</span><br><span class="line">解释：下标为 0 ，1 和 2 的乘客年龄分别为 75 ，92 和 40 。所以有 2 人年龄大于 60 岁。</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：details = [&quot;1313579440F2036&quot;,&quot;2921522980M5644&quot;]</span><br><span class="line">输出：0</span><br><span class="line">解释：没有乘客的年龄大于 60 岁。</span><br></pre></td></tr></table></figure>
+
+<hr>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">countSeniors</span><span class="params">(vector&lt;string&gt;&amp; details)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> num=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(vector&lt;string&gt;::iterator it=details.<span class="built_in">begin</span>();it != details.<span class="built_in">end</span>();it++)&#123;</span><br><span class="line">            <span class="type">int</span> age = <span class="built_in">stoi</span>((*it).<span class="built_in">substr</span>(<span class="number">11</span>,<span class="number">2</span>));</span><br><span class="line">            <span class="keyword">if</span>(age&gt;<span class="number">60</span>)  num++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> num;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>力扣算法题</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>C++</tag>
+      </tags>
+  </entry>
 </search>
