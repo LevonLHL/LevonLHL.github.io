@@ -1550,4 +1550,30 @@
         <tag>算法</tag>
       </tags>
   </entry>
+  <entry>
+    <title>倍数求和</title>
+    <url>/2023/10/28/%E5%80%8D%E6%95%B0%E6%B1%82%E5%92%8C/</url>
+    <content><![CDATA[<p>给你一个正整数 <code>n</code> ，请你计算在 <code>[1，n]</code> 范围内能被 <code>3</code>、<code>5</code>、<code>7</code> 整除的所有整数之和。</p>
+<p>返回一个整数，用于表示给定范围内所有满足约束条件的数字之和。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：n = 7</span><br><span class="line">输出：21</span><br><span class="line">解释：在 [1, 7] 范围内能被 3、5、7 整除的所有整数分别是 3、5、6、7 。数字之和为 21。</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：n = 10</span><br><span class="line">输出：40</span><br><span class="line">解释：在 [1, 10] 范围内能被 3、5、7 整除的所有整数分别是 3、5、6、7、9、10 。数字之和为 40。</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 3：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：n = 9</span><br><span class="line">输出：30</span><br><span class="line">解释：在 [1, 9] 范围内能被 3、5、7 整除的所有整数分别是 3、5、6、7、9 。数字之和为 30。</span><br></pre></td></tr></table></figure>
+
+<hr>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">sumOfMultiples</span><span class="params">(<span class="type">int</span> n)</span>&#123;</span><br><span class="line">    <span class="type">int</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">3</span>;i &lt;= n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>((i % <span class="number">3</span> == <span class="number">0</span>) || (i % <span class="number">5</span> == <span class="number">0</span>) || (i % <span class="number">7</span> == <span class="number">0</span>))</span><br><span class="line">        &#123;</span><br><span class="line">            sum += i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>力扣算法题</category>
+      </categories>
+      <tags>
+        <tag>C语言</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
 </search>
